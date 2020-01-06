@@ -1,0 +1,24 @@
+
+
+
+<div class="row mx-5 my-5">
+
+  <div *ngFor="let emp of list" class="col-md-5 card ml-5 mb-5 py-4 px-4">
+    <p class="card-title">First Name: <span class="apiData">{{emp.firstname}}</span></p>
+    <p class="card-text">Last Name: <span class="apiData">{{emp.lastname}}</span></p>
+    <p class="card-text">Email: <span class="apiData">{{emp.email}} </span></p>
+                
+    <a class="btn text-white" (click)="onDelete(emp.id)">
+        <button class="btn btn-md btn-block btn-danger"> Delete
+          <i class="fa fa-trash"></i>
+        </button>
+    </a>
+
+    <a class="btn text-white" (click)="onEdit(emp)">
+      <button class="btn btn-md btn-block btn-success"> Update
+        <i class="fa fa-recycle"></i>
+      </button>
+  </a>
+
+  </div>  
+</div>

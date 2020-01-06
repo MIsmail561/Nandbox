@@ -1,0 +1,28 @@
+
+<nav class="navbar navbar-expand-lg nav-bg nav-col bot-rad px-5">
+    <img src="../../assets/logo1.png" class="img-fluid logo">
+    <h4 class="px-2 mt-2"> 
+        <p class="px-2 pt-3" *ngIf="user">Welcome: {{ user?.displayName }}</p>
+        <p class="px-2 pt-3" *ngIf="!user">Nandbox</p>
+    </h4>   
+    <button class="navbar-toggler d-lg-none  text-dark" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+        aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fa fa-th-list faList "></i>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <li class="nav-item ">
+            <button class="btn btn-primary mr-2" *ngIf="!user" (click)="register()">Register</button>
+            <button class="btn btn-primary" *ngIf="user" (click)="logout()" routerLink="/login">Logout</button>
+            <button class="btn btn-primary" *ngIf="!user" (click)="login()">Login</button>
+        </li>
+      </ul>
+      
+    </div>
+</nav>
+
+<div class="cont">
+
+    <app-users></app-users>
+
+</div>
